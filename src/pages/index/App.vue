@@ -1,23 +1,41 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <db-header></db-header>
+    <top-banner></top-banner>
     <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import DBHeader from '../../components/DBHeader'
+  import TopBanner from './components/TopBanner'
+
+  export default {
+    name: 'App',
+    components: {
+      'db-header': DBHeader,
+      TopBanner
+    }
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #app {
+   /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
+    text-align: center;
+    color: #2c3e50;
+    width: inherit;
+  }
+
+  html{
+    font-size: 13px;
+  }
+
 </style>
