@@ -1,3 +1,6 @@
+已经更改为豆瓣电影的仿站项目
+
+
 # cnode-multipages
 
 > A Vue.js project
