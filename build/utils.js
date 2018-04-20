@@ -29,7 +29,7 @@ exports.entries=function(){
 
 /*多页面输出配置
 * 与上面的多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中*/
-exports.htmlPlugins=function(){
+exports.htmlPlugin=function(){
   let entryHtml=glob.sync(PAGE_PATH+'/*/*.html')
   let arr=[]
   entryHtml.forEach((filePath)=>{
@@ -40,6 +40,8 @@ exports.htmlPlugins=function(){
       //文件名称
       filename:filename+'.html',
       //页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有js脚本
+      /*第一个vendor模块是指node_modules中的功用模块
+        第二个manifest是指针对vendor模块所做的缓存*/
       chunks:['manifest','vendor',filename],
       inject:true
     }

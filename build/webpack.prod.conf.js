@@ -116,7 +116,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
-  ].concat(utils.htmlPlugins())
+  ].concat(utils.htmlPlugin())
 })
 
 if (config.build.productionGzip) {
